@@ -1,5 +1,4 @@
-import {FC, useState} from "react";
-import {number} from "prop-types";
+import {FC} from "react";
 
 
 export const Tabs: FC<{ options: { label: string, value: string }[], value: string, onChange: (value: string) => void }> = ({ options, value, onChange }) => {

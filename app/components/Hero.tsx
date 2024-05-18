@@ -1,8 +1,8 @@
 "use client"
 
-import React, { useRef, useState } from 'react';
+import React, {useState} from 'react';
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import {Swiper, SwiperSlide} from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -30,6 +30,8 @@ export const Hero = () => {
         { image:   '/images/hero/hero-10.jpeg',title: 'GetABat Whirl Balls', content: 'Dominate every delivery,consistent bounce, durability, and game-changing spin.' },
     ];
 
+    const windowSize = typeof window !== 'undefined' ? window.innerWidth : 0;
+
     return (
         <div className={'h-[90vh] space-y-2'}>
             <Swiper
@@ -37,7 +39,7 @@ export const Hero = () => {
                     // @ts-ignore
                     '--swiper-navigation-color': '#fff',
                     '--swiper-pagination-color': '#fff',
-                    '--swiper-navigation-size': window.innerWidth < 500 ? '12px' : '30px',
+                    '--swiper-navigation-size': windowSize < 500 ? '12px' : '30px',
                 }}
                 loop={true}
                 spaceBetween={10}
