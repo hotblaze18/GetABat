@@ -2,32 +2,123 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+    html {
+        @apply scroll-smooth;
+    }
+
+    body {
+        @apply text-on-background-light;
+        @apply text-base;
+        @apply bg-background-dark;
+        @apply font-dm-sans;
+    }
+
+    h1 {
+        @apply font-bold;
+        @apply text-4xl sm:text-5xl md:text-6xl;
+        @apply font-silkscreen;
+    }
+
+    h2 {
+        @apply font-bold;
+        @apply text-3xl sm:text-4xl md:text-5xl;
+        @apply font-silkscreen;
+    }
+
+    h3 {
+        @apply font-bold;
+        @apply text-2xl;
+        @apply font-dm-sans;
+    }
+
+    h4 {
+        @apply font-bold;
+        @apply text-base;
+        @apply font-dm-sans;
+    }
+
+    p {
+        @apply text-base;
+    }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    .mt-section {
+        @apply mt-20 sm:mt-24;
+    }
+
+    .mb-section {
+        @apply mb-20 sm:mb-24;
+    }
+
+    .my-section {
+        @apply mt-section mb-section;
+    }
+
+    .pt-section {
+        @apply pt-20 sm:pt-24;
+    }
+
+    .pb-section {
+        @apply pb-20 sm:pb-24;
+    }
+
+    .py-section {
+        @apply pt-section pb-section;
+    }
 }
+
+
+/*Hero Swiper Styles*/
+.hero-swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-swiper .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-slide {
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-swiper.upper {
+    height: 80%;
+    width: 100%;
+}
+
+.hero-swiper.lower {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+
+.hero-swiper.lower .swiper-slide {
+    width: 25%;
+    height: 90%;
+    opacity: 0.4;
+    overflow: hidden;
+}
+
+.hero-swiper.lower .swiper-slide-thumb-active {
+    opacity: 1;
+}
+
+/* Pagination Bullets Styles For Swiper */
+.swiper-pagination-bullet {
+    @apply bg-background-dark w-20 h-1;
+    @apply opacity-20 cursor-pointer;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    @apply opacity-100;
+}
+

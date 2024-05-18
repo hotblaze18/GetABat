@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 const config: Config = {
   content: [
@@ -7,11 +8,42 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem',
+        sm: '1.5rem',
+        md: '2.625rem',
+        lg: '3.25rem',
+        xl: '4rem',
+        '2xl': '5rem',
+      },
+    },
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        primary: '#1985A1',
+
+        error: '#D13604',
+
+        'on-background-light': '#000000',
+        'on-background-dark': '#FFFFFF',
+        'secondary-text': '#848A86',
+
+        'background-light': '#F8F8F8',
+        'background-dark': '#000000',
+      },
+      fontFamily: {
+        'silkscreen': ['Silkscreen', ...defaultTheme.fontFamily.sans],
+        'dm-sans': ['DM Sans', ...defaultTheme.fontFamily.sans],
+      },
+      fontSize: {
+        xs: ['0.75rem', '1.25rem'],
+        sm: ['0.875rem', '1.25rem'],
+        base: ['1rem', '1.25rem'],
+        lg: ['1.125rem', '1.375rem'],
+        xl: ['1.25rem', '1.5rem'],
+        '1.5xl': ['1.375rem', '1.625rem'],
+        '2xl': ['1.5rem', '1.75rem'],
       },
     },
   },
