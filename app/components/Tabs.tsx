@@ -1,4 +1,5 @@
 import {FC} from "react";
+import clsx from "clsx";
 
 
 export const Tabs: FC<{ options: { label: string, value: string }[], value: string, onChange: (value: string) => void }> = ({ options, value, onChange }) => {
@@ -12,7 +13,7 @@ export const Tabs: FC<{ options: { label: string, value: string }[], value: stri
                 {options.map((option) => (
                     <li key={option.value} className="me-2">
                         <a href="#"
-                           className={`inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 ${selectedTab.value === option.value ? 'text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500' : ''}`}
+                           className={clsx('inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-blue-300 hover:border-blue-300', {'text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500': selectedTab.value === option.value})}
                            onClick={(e) => {
                                e.preventDefault();
                                  onChange(option.value);
