@@ -4,7 +4,7 @@ import LogoImage from '@/public/logo.png';
 import FacebookSvg from '@/public/svgs/facebook.svg';
 import InstagramSvg from '@/public/svgs/insta.svg';
 
-import { AiOutlineMail, AiOutlineContacts, AiOutlinePhone } from "react-icons/ai";
+import {AiOutlineContacts, AiOutlineMail, AiOutlinePhone} from "react-icons/ai";
 
 
 export const Footer: FC<{ hideLinks?: boolean }> = () => {
@@ -17,11 +17,11 @@ export const Footer: FC<{ hideLinks?: boolean }> = () => {
                         {/*<a href={'#'}>*/}
                         {/*  <TwitterSvg className={'w-12 h-12'} />*/}
                         {/*</a>*/}
-                        <a href={'https://www.facebook.com/'} target={'_blank'} rel="noreferrer">
-                            <FacebookSvg className={'w-12 h-12'} />
+                        <a href={'https://www.facebook.com/share/apomGk7gsfiyPYwa/?mibextid=LQQJ4d'} target={'_blank'} rel="noreferrer">
+                            <FacebookSvg className={'w-14 h-14'} />
                         </a>
-                        <a href={'https://instagram.com/'} target={'_blank'} rel="noreferrer">
-                            <InstagramSvg className={'w-12 h-12'} />
+                        <a href={'https://www.instagram.com/getabat.in/?hl=en'} target={'_blank'} rel="noreferrer">
+                            <InstagramSvg className={'w-14 h-14'} />
                         </a>
                     </div>
                 </div>
@@ -32,14 +32,15 @@ export const Footer: FC<{ hideLinks?: boolean }> = () => {
                         <AiOutlineMail className={'w-4 h-4 text-primary'} />
                         <div className={'space-y-1'}>
                             <p className={'font-semibold'}>Email</p>
-                            <p>hello@getabat.com</p>
+                            <p>getabat3110@gmail.com</p>
                         </div>
                     </div>
 
                     <div className={'flex space-x-2'}>
                         <AiOutlinePhone className={'w-4 h-4 text-primary'} />
-                        <div className={'space-y-1'}>
+                        <div className={'space-y-2'}>
                             <p className={'font-semibold'}>Phone</p>
+                            <p>+91 9898555369</p>
                             <p>+91 9909148457</p>
                         </div>
                     </div>
@@ -49,21 +50,23 @@ export const Footer: FC<{ hideLinks?: boolean }> = () => {
                         <div className={'space-y-1'}>
                             <p className={'font-semibold'}>Address</p>
                             <p>
-                                #2, 3rd Cross,
+                                Shop #12, Nirav Complex
                                 <br />
-                                Navarangpura, Ahembdabad, India
+                                Navrang Circle, Naranpura,
                                 <br />
-                                300010
+                                Ahmedabad, Gujarat, India,
+                                <br/>
+                                380014
                             </p>
                         </div>
                     </div>
                 </div>
 
                 <div className={'flex space-x-4 justify-center sm:hidden'}>
-                    <a href={'https://www.facebook.com/'} target={'_blank'} rel="noreferrer">
+                    <a href={'https://www.facebook.com/share/apomGk7gsfiyPYwa/?mibextid=LQQJ4d'} target={'_blank'} rel="noreferrer">
                         <FacebookSvg className={'w-6 h-6'} />
                     </a>
-                    <a href={'https://instagram.com/'} target={'_blank'} rel="noreferrer">
+                    <a href={'https://www.instagram.com/getabat.in/?hl=en'} target={'_blank'} rel="noreferrer">
                         <InstagramSvg className={'w-6 h-6'} />
                     </a>
                 </div>

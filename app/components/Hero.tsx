@@ -18,16 +18,17 @@ export const Hero = () => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
     const slides = [
-        { image: '/images/hero/hero-1.jpeg', title: 'GetABat Regent Kitbag', content: 'Gear up like a champion, performance, comfort, and style' },
-        { image:   '/images/hero/hero-2.jpeg', title: 'GetABat India\'s finest willow bat', content: 'Unleash your potential, unmatched performance on the pitch.' },
-        { image:   '/images/hero/hero-3.jpeg', title: 'GetABat Combo Thigh pads', content: 'Defend your stance, offering unbeatable protection, flexibility, and agility in every step.' },
-        { image:   '/images/hero/hero-4.jpeg', title: 'GetABat Combo Thigh pads', content: 'Defend your stance, offering unbeatable protection, flexibility, and agility in every step.' },
-        { image:   '/images/hero/hero-5.jpeg', title: 'GetABat Test edition batting gloves', content: 'Get a grip on victory, crafted for ultimate comfort, control, and protection at the crease.' },
-        { image:   '/images/hero/hero-6.jpeg', title: 'GetABat Cut Batting gloves', content: 'Get a grip on victory, crafted for ultimate comfort, control, and protection at the crease.'  },
-        { image:   '/images/hero/hero-7.jpeg', title: 'GetABat Turbo-Grip Batting Gloves', content: 'Get a grip on victory, crafted for ultimate comfort, control, and protection at the crease.' },
-        { image:   '/images/hero/hero-8.jpeg', title: 'GetABat Turbo-Grip Batting Gloves', content: 'Get a grip on victory, crafted for ultimate comfort, control, and protection at the crease.' },
-        { image:   '/images/hero/hero-9.jpeg', title: 'GetABat Whirl Balls', content: 'Dominate every delivery,consistent bounce, durability, and game-changing spin.' },
-        { image:   '/images/hero/hero-10.jpeg',title: 'GetABat Whirl Balls', content: 'Dominate every delivery,consistent bounce, durability, and game-changing spin.' },
+        { image: '/images/hero/hero-1.jpeg', title: 'GETABAT Regent Kitbag', content: 'Gear up like a champion, performance, comfort, and style' },
+        { image:   '/images/hero/hero-2.jpeg', title: 'GETABAT Player edition Grade 1 English Willow Bat', content: 'Unleash your potential, unmatched performance on the pitch.' },
+        { image:   '/images/hero/hero-2.jpeg', title: 'GETABAT Power edition India\'s finest willow bat', content: 'Unleash your potential, unmatched performance on the pitch.' },
+        { image:   '/images/hero/hero-3.jpeg', title: 'GETABAT Batting Pads and Combo Thigh pads.', content: 'Defend your stance, offering unbeatable protection, flexibility, and agility in every step.' },
+        { image:   '/images/hero/hero-4.jpeg', title: 'GETABAT Batting Pads and Combo Thigh pads.', content: 'Defend your stance, offering unbeatable protection, flexibility, and agility in every step.' },
+        { image:   '/images/hero/hero-5.jpeg', title: 'GETABAT Turbo-Grip Batting Gloves', content: 'Get a grip on victory, crafted for ultimate comfort, control, and protection at the crease.' },
+        { image:   '/images/hero/hero-6.jpeg', title: 'GETABAT Test edition batting gloves', content: 'Get a grip on victory, crafted for ultimate comfort, control, and protection at the crease.'  },
+        { image:   '/images/hero/hero-7.jpeg', title: 'GETABAT Cut edition Batting gloves', content: 'Get a grip on victory, crafted for ultimate comfort, control, and protection at the crease.' },
+        { image:   '/images/hero/hero-8.jpeg', title: 'GETABAT Test pro batting gloves', content: 'Get a grip on victory, crafted for ultimate comfort, control, and protection at the crease.' },
+        { image:   '/images/hero/hero-9.jpeg', title: 'GETABAT Supreme Balls', content: 'Dominate every delivery,consistent bounce, durability, and game-changing spin.' },
+        { image:   '/images/hero/hero-10.jpeg',title: 'GETABAT Supreme Balls', content: 'Dominate every delivery,consistent bounce, durability, and game-changing spin.' },
     ];
 
     const windowSize = typeof window !== 'undefined' ? window.innerWidth : 0;
@@ -41,11 +42,12 @@ export const Hero = () => {
                     '--swiper-pagination-color': '#fff',
                     '--swiper-navigation-size': windowSize < 500 ? '12px' : '30px',
                 }}
+                speed={600}
                 loop={true}
                 spaceBetween={10}
                 navigation={true}
                 autoplay={{
-                    delay: 2000,
+                    delay: 5000,
                     disableOnInteraction: false,
                 }}
                 thumbs={{ swiper: thumbsSwiper }}
@@ -76,7 +78,7 @@ export const Hero = () => {
                 className={'hero-swiper lower'}
             >
                 {slides.map(({ image }, i) => (
-                    <SwiperSlide key={i} virtualIndex={i}>
+                    <SwiperSlide key={i} virtualIndex={i} className={'cursor-pointer'}>
                         <Image alt={''} src={image} fill={true} />
                     </SwiperSlide>
                 ))}

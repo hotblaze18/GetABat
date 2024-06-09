@@ -1,4 +1,5 @@
-import type { Config } from "tailwindcss";
+import type {Config} from "tailwindcss";
+
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 const config: Config = {
@@ -33,7 +34,7 @@ const config: Config = {
         'background-dark': '#000000',
       },
       fontFamily: {
-        'silkscreen': ['Silkscreen', ...defaultTheme.fontFamily.sans],
+        'lora': ['Lora', ...defaultTheme.fontFamily.serif],
         'dm-sans': ['DM Sans', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {

@@ -1,6 +1,4 @@
 import {FC} from "react";
-import CircleDecoration from '@/public/images/decoration.png';
-import Image from "next/image";
 
 export const GrabGear: FC = () => {
     return (
@@ -9,9 +7,9 @@ export const GrabGear: FC = () => {
 
             </div>
          <h1 className={'text-center text-primary mb-8'}>Grab Gear</h1>
-            <p className={'text-center text-primary max-w-3xl mx-auto text-xl'}>
-                Welcome to GetABat, the ultimate destination for sports enthusiasts. Dive into the
-                thrilling world of sports equipment with us and ignite the champion within.
+            <p className={'text-center text-primary max-w-3xl mx-auto text-xl sm:text-2xl font-semibold'}>
+                Welcome to GETABAT, the ultimate destination for cricket enthusiasts. Dive into the
+                thrilling world of cricket equipment with us and ignite the champion within.
             </p>
         </div>
     )

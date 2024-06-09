@@ -5,7 +5,7 @@ import {useRef} from "react";
 import 'swiper/css';
 import Image from 'next/image';
 import LogoImage from '@/public/logo.png';
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+import {AiOutlineArrowLeft, AiOutlineArrowRight} from "react-icons/ai";
 
 export const Testimonials = () => {
 
@@ -15,22 +15,10 @@ export const Testimonials = () => {
 
     const TestimonialsContent = [{
         content: 'Exceptional quality, unparalleled performance, and unwavering durability - this is what defines GetABat. As an avid cricketer, I\'ve had the privilege of experiencing their top-notch equipment firsthand, and I can confidently say that it\'s a game-changer.',
-        age: 42,
-        name: 'John Doe',
+        name: 'Deep Rajgor',
         img: '/images/testimonials/person-1.png',
-        designation: 'Head Coach, XYZ Sports Club'
-    }, {
-        content: 'From the moment you grip one of their bats, you can feel the craftsmanship and precision that goes into every detail. Whether you\'re a power hitter or a finesse player, their bats offer the perfect balance of strength and control, enabling you to unleash your full potential on the pitch.',
-        age: 36,
-        name: 'John Doe',
-        img: '/images/testimonials/person-2.png',
-        designation: 'Captain, XYZ Sports Club'
-    }, {
-        content: 'As someone who takes their cricket seriously, I wouldn\'t trust any other brand to provide me with the quality and reliability that [Sports Brand] delivers. Whether you\'re a seasoned pro or just starting out, invest in the best and elevate your game with GetABat."',
-        age: 24,
-        name: 'John Doe',
-        img: '/images/testimonials/person-3.png',
-        designation: 'Cricket Enthusiast, XYZ Sports Club'
+        designation: 'Professional player in Top leagues held in the UAE',
+        driveLink: 'https://drive.google.com/file/d/16P3SP2JEXU1RJqLbcRDW4L3X35M7o1D0/preview'
     }];
 
     return (
@@ -56,29 +44,32 @@ export const Testimonials = () => {
                     (swiper.params.pagination as PaginationOptions).el = paginationRef.current;
                 }}
             >
-                {TestimonialsContent.map(({ content, age, name, img, designation }, index) => (
+                {TestimonialsContent.map(({ content,  name, img, designation, driveLink }, index) => (
                     <SwiperSlide key={name} virtualIndex={index}>
-                        <div className={'flex space-x-0 lg:space-x-5 justify-center'}>
-                            <div className={'w-[100px] h-[100px] rounded-full overflow-hidden hidden lg:block'}>
-                                <Image src={img} alt={name} width={100} height={100} />
+                        <div className={'space-y-10'}>
+                            <div className={'flex space-x-0 lg:space-x-5 justify-center'}>
+                                {/*<div className={'w-[100px] h-[100px] rounded-full overflow-hidden hidden lg:block'}>*/}
+                                {/*    <Image src={img} alt={name} width={100} height={100} />*/}
+                                {/*</div>*/}
+                                <div className={'flex-1 max-w-3xl space-y-4 mb-3'}>
+                                    <div className={'flex space-x-5 lg:space-x-0'}>
+                                        <div className={'w-[75px] h-[75px] rounded-full overflow-hidden lg:hidden'}>
+                                            <Image src={img} alt={name} width={100} height={100} />
+                                        </div>
+                                        <div>
+                                            <h3 className={'text-white'}>{name}</h3>
+                                            <p className={'text-white/70'}>{designation}</p>
+                                        </div>
+                                    </div>
+                                    <p className={'mb-6 text-lg'}>{content}</p>
+                                    <div className={'flex space-x-2 items-center space-y-1'}>
+                                        <Image src={LogoImage} alt={'GetABat Logo'} width={86} height={48} />
+                                        <p className={'text-white/80'}>Customer</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div className={'flex-1 max-w-3xl space-y-4 mb-3'}>
-                                <div className={'flex space-x-5 lg:space-x-0'}>
-                                    <div className={'w-[75px] h-[75px] rounded-full overflow-hidden lg:hidden'}>
-                                        <Image src={img} alt={name} width={100} height={100} />
-                                    </div>
-                                    <div>
-                                        <h3 className={'font-bold mb-1'}>
-                                            {name}, <span className={'font-normal'}>{age} years</span>
-                                        </h3>
-                                        <p className={'text-white/70'}>{designation}</p>
-                                    </div>
-                                </div>
-                                <p className={'mb-6 text-lg'}>{content}</p>
-                                <div className={'flex space-x-2 items-center space-y-1'}>
-                                    <Image src={LogoImage} alt={'GetABat Logo'} width={86} height={48} />
-                                    <p className={'text-white/80'}>Customer</p>
-                                </div>
+                            <div className={'mx-auto max-w-2xl'}>
+                                <iframe src={driveLink} width="640" height="480" allow="autoplay"></iframe>
                             </div>
                         </div>
                     </SwiperSlide>

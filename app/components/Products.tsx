@@ -6,11 +6,10 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 
 // import required modules
-import {Autoplay, Virtual} from 'swiper/modules';
+import {Autoplay, FreeMode, Navigation, Thumbs, Virtual} from 'swiper/modules';
 import Image from "next/image";
 import {ProductCategory, PRODUCTS_CONTENT, SubCategoryKeyMap} from "@/app/content/products";
-import {FreeMode, Navigation, Thumbs} from "swiper/modules";
-import {capitalize, groupBy, uniq} from "lodash";
+import {capitalize, uniq} from "lodash";
 import {Tabs} from "@/app/components/Tabs";
 import clsx from "clsx";
 
@@ -54,9 +53,10 @@ export const ProductGroup: FC<{ products: typeof PRODUCTS_CONTENT, selectedProdu
                         '--swiper-pagination-color': '#000',
                     }}
                     loop={true}
+                    speed={600}
                     spaceBetween={10}
                     autoplay={{
-                        delay: 2000,
+                        delay: 5000,
                         disableOnInteraction: false,
                     }}
                     thumbs={{ swiper: thumbsSwiper }}
@@ -83,7 +83,7 @@ export const ProductGroup: FC<{ products: typeof PRODUCTS_CONTENT, selectedProdu
                     className={'hero-swiper lower !h-[100px] md:h-[20%]'}
                 >
                     {images.map((image, i) => (
-                        <SwiperSlide key={i} virtualIndex={i}>
+                        <SwiperSlide key={i} virtualIndex={i} className={'cursor-pointer'}>
                             <Image alt={title} src={image} fill={true} />
                         </SwiperSlide>
                     ))}
@@ -93,7 +93,7 @@ export const ProductGroup: FC<{ products: typeof PRODUCTS_CONTENT, selectedProdu
             <div className={'w-full'}>
                 <h3 className={'mb-6'}>{title}</h3>
                 <h4 className={'mb-8'}>Rs. {price}</h4>
-                <p className={'mb-8'}>{description}</p>
+                <h4 className={'mb-8 text-lg font-semibold'}>{description}</h4>
 
                 <div className={clsx('space-y-4', { hidden: groupVariables.colors.length == 0 && groupVariables.sizes.length == 0 && groupVariables.editions.length === 0  })}>
                     {groupVariables.colors.length > 0 && (
@@ -169,7 +169,7 @@ export const  Products = () => {
     const [selectedSubCategory, setSelectedSubCategory] = useState<{ [category: string]: string }>({});
     const [selectedProduct, setSelectedProduct] = useState<{ [subCategory: string]: typeof PRODUCTS_CONTENT[number] }>({});
 
-    const categories = [ProductCategory.KITS, ProductCategory.GLOVES, ProductCategory.BATS, ProductCategory.PADS];
+    const categories = [ProductCategory.KITS, ProductCategory.GLOVES, ProductCategory.BATS, ProductCategory.PADS, ProductCategory.BALLS];
 
     const findProductByVariant = (category: string, variant: typeof PRODUCTS_CONTENT[number]['variant']) => {
         const product = PRODUCTS_CONTENT.find(({ category: pc, variant: pv }) => pc === category && pv.type == variant.type && pv.color === variant.color && pv.size === variant.size && variant.edition == pv.edition);
